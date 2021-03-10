@@ -1,0 +1,74 @@
+<script src="sparklines.js"></script>
+
+<h2>Inline</h2>
+
+<p>This is more text above<br>Some text <span class="sparkline inline" data-values="1,4,3,6,5"></span> around here<br>This is more text underneath</p>
+
+<h2>Table</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>Foo</td>
+      <td>Bar</td>
+      <td>Foo</td>
+    </tr>
+    <tr>
+      <td>Foo</td>
+      <td><span class="sparkline inline" data-values="1,4,3,6,5"></span></td>
+      <td>Bar</td>
+    </tr>
+    <tr>
+      <td>Foo</td>
+      <td>Bar</td>
+      <td>Foo</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Block</h2>
+<div class="sparkline inline" data-values="1,4,3,6,5"></div>
+
+<h2>Responsive</h2>
+
+<div class="sparkline responsive" data-values="1,4,3,6,5"></div>
+
+<style>
+
+  html {
+    font-size: 16pt;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    border: solid 1px black;
+  }
+
+  div {
+    background: #eee;
+  }
+
+  .sparkline.responsive {
+    background: #eee;
+    display: block;
+  }
+
+  .sparkline.responsive svg {
+    height: 100px;
+    width: 100%;
+  }
+
+  .sparkline svg {
+    stroke: black;
+    stroke-width: 3px;
+    fill: #ccc;
+  }
+
+</style>
+
+<script>
+  sparklines('.sparkline.inline', { filled: true, inline: true /*height: 100, width: 300*/ });
+  sparklines('.sparkline.responsive', { filled: true, /*height: 100, width: 300*/ });
+</script>
